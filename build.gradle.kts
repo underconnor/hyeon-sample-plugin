@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.5.0"
+    kotlin("jvm") version "1.5.10"
     id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
@@ -9,14 +9,14 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib")) // Kotlin
-    implementation("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT") // Paper Latest
+    compileOnly(kotlin("stdlib")) // Kotlin
+    compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT") // Paper Latest
     implementation("com.github.monun:kommand:+") // For future command creation convenience.
 }
 
 tasks {
     compileKotlin {
-        kotlinOptions.jvmTarget = "16" // https://papermc.io/java16 | 페이퍼 개놈들아
+        kotlinOptions.jvmTarget = "11" // 응 11로 내릴거야
     }
     processResources {
         filesMatching("**/*.yml") {
@@ -30,6 +30,6 @@ tasks {
     }
     create<Copy>("dist") {
         from (shadowJar)
-        into(".\\")
+        into(".\\.server\\plugins")
     }
 }

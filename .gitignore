@@ -3,5 +3,5 @@
 build
 # IntelliJ
 .idea
-# Output Jar
+# Root Dir Jar
 /*.jar
