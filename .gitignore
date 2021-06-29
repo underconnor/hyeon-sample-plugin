@@ -5,3 +5,8 @@ build
 .idea
 # Root Dir Jar
 /*.jar
+# Avoid Ignoring Gradle Jar
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+# Server Files
+.server

@@ -1,17 +1,17 @@
 plugins {
-    kotlin("jvm") version "1.5.10"
+    kotlin("jvm") version "1.5.20"
     id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
 repositories {
-    maven("https://jitpack.io")  // For monun's libraries.
+    mavenCentral() // 코드 한줄을 줄여주셨습니다 각별님 감사합니다
     maven("https://papermc.io/repo/repository/maven-public/") // PaperMC
 }
 
 dependencies {
     compileOnly(kotlin("stdlib")) // Kotlin
     compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT") // Paper Latest
-    implementation("com.github.monun:kommand:1.1.0")
+    implementation("io.github.monun:kommand:1.2.0")
 }
 
 tasks {

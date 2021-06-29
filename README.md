@@ -1,10 +1,15 @@
 # Paper Developemnt Sample Plugin
 
-#### Environment
+## Environment
 
-- [Paper 1.16.5](https://papermc.io/downloads) dependencies
+- [Paper 1.17](https://papermc.io/downloads) dependencies
 - [Kommand](https://github.com/monun/kommand/) dependencies
 - [Kotlin Plugin](https://github.com/monun/kotlin-plugin/) dependencies
 - .gitignore
 - [Travis CI](https://travis-ci.com/)
-- [Server Script](https://github.com/monun/server-script)
+- [Server Script](https://github.com/monun/server-script) / Using [aroxu's version](https://github.com/aroxu/server-script/)
+
+### This Project Needs:
+
+- [JDK 8 ~ 16](https://www.azul.com/downloads/) (Zulu OpenJDK is Recommended.)
+- zip, unzip package
