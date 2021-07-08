@@ -13,7 +13,7 @@ server=https://github.com/aroxu/server-script/releases/latest/download/server_li
 
 if type -p bsdtar
 then
-    echo "Found Bsdtar in PATH"
+    echo "Found Bsdtar Package"
 else
     echo "Bsdtar was not found on this machine. Please install with your Package Manager. Exiting..."
     exit
@@ -27,9 +27,10 @@ done
 
 if [ -d "./.server" ]
 then
-    mkdir .server
+    cd .server || return
 else
-    cd server || return
+    mkdir .server
+    cd .server || return
 fi
 
 if [ -f "server_linux_x64.zip" ]
