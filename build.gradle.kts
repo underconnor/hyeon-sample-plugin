@@ -9,7 +9,7 @@ repositories {
 
 dependencies {
     compileOnly(kotlin("stdlib")) // Kotlin
-    compileOnly("io.papermc.paper:paper-api:1.17-R0.1-SNAPSHOT") // Paper Latest
+    compileOnly("io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT") // Paper Latest
     compileOnly("io.github.monun:tap:4.0.0-RC")
     compileOnly("io.github.monun:kommand:1.2.1") // 와 shadowJar 버리는 시대가 올 줄이야
 }
