@@ -1,7 +1,5 @@
 # Paper Developemnt Sample Plugin
 
-[![Build Status](https://travis-ci.com/qogusdn1017/hyeon-sample-plugin.svg?branch=master)](https://travis-ci.com/qogusdn1017/hyeon-sample-plugin)
-
 ## Environment
 
 - [Paper 1.17](https://papermc.io/downloads) dependencies
