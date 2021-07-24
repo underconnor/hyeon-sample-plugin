@@ -10,7 +10,7 @@
 - [Travis CI](https://travis-ci.com/)
 - [Server Script](https://github.com/monun/server-script) / Using [aroxu's GoLang version](https://github.com/aroxu/server-script/)
 
-### This Project Needs:
+### This Project Requires:
 
 - [JDK 8 ~ 16](https://www.azul.com/downloads/) (Zulu OpenJDK is Recommended.)
 - Bsdtar package (on Linux)

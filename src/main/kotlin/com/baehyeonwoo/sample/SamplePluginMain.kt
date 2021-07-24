@@ -34,5 +34,6 @@ class SamplePluginMain : JavaPlugin() {
         logger.info("Hello World!")
         server.pluginManager.registerEvents(SampleEvent(), this)
         server.scheduler.runTask(instance, SampleScheduler())
+        SampleKommand.sampleKommand()
     }
 }
