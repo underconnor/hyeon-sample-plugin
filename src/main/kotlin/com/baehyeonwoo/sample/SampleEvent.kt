@@ -16,7 +16,7 @@
 
 package com.baehyeonwoo.sample
 
-import io.github.monun.tap.effect.playFirework
+import com.github.monun.tap.effect.playFirework
 import net.kyori.adventure.text.Component.text
 import org.bukkit.Color
 import org.bukkit.FireworkEffect

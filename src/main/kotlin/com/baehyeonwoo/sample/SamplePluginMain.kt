@@ -16,6 +16,7 @@
 
 package com.baehyeonwoo.sample
 
+import io.github.monun.kommand.kommand
 import org.bukkit.plugin.java.JavaPlugin
 
 /***
@@ -34,6 +35,10 @@ class SamplePluginMain : JavaPlugin() {
         logger.info("Hello World!")
         server.pluginManager.registerEvents(SampleEvent(), this)
         server.scheduler.runTask(instance, SampleScheduler())
-        SampleKommand.sampleKommand()
+        kommand {
+            register("sample") {
+                SampleKommand.register(this)
+            }
+        }
     }
 }

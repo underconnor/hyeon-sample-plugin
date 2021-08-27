@@ -1,17 +1,19 @@
 plugins {
-    kotlin("jvm") version "1.5.21"
+    kotlin("jvm") version "1.5.30"
+    id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
 repositories {
     mavenCentral()
+    maven("https://jitpack.io/")
     maven("https://papermc.io/repo/repository/maven-public/")
 }
 
 dependencies {
     compileOnly(kotlin("stdlib"))
-    compileOnly("io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT")
-    compileOnly("io.github.monun:tap-api:4.1.7")
-    compileOnly("io.github.monun:kommand-api:2.6.5")
+    compileOnly("com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT")
+    compileOnly("com.github.monun:tap:3.7.1")
+    implementation("io.github.monun:kommand:1.2.1")
 }
 
 tasks {
