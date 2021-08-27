@@ -11,4 +11,4 @@
 ### This Project Requires:
 
 - JDK 8~16 (Corretto OpenJDK is Recommended.)
-- libarchive-tools package (on Linux, for [./server-script.sh](./server-script.sh)
+- libarchive-tools package (on Linux, for [./server-script.sh](./server-script.sh))
