@@ -12,9 +12,9 @@ object SampleKommand {
     fun sampleKommand() {
         getInstance().kommand {
             register("sample") {
-                requires { playerOrNull != null && sender.isOp }
+                requires { playerOrNull != null && isOp }
                 executes {
-                    sender.sendMessage(text().content("Hello World!").build())
+                    sender.sendMessage(text("Hello World!"))
                 }
             }
         }

@@ -17,7 +17,7 @@
 package com.baehyeonwoo.sample
 
 import io.github.monun.tap.effect.playFirework
-import net.kyori.adventure.text.Component
+import net.kyori.adventure.text.Component.text
 import org.bukkit.Color
 import org.bukkit.FireworkEffect
 import org.bukkit.event.EventHandler
@@ -40,7 +40,7 @@ class SampleEvent : Listener {
         val firework = FireworkEffect.builder().with(FireworkEffect.Type.STAR).withColor(Color.AQUA).build()
 
         getInstance().logger.info("Hello World!")
-        e.player.sendMessage(Component.text().content("Hello World!").build())
+        e.player.sendMessage(text("Hello World!"))
         loc.world.playFirework(loc, firework)
     }
 }
