@@ -20,6 +20,10 @@ import io.github.monun.kommand.KommandBuilder
 import net.kyori.adventure.text.Component.text
 import org.bukkit.entity.Player
 
+/***
+ * @author BaeHyeonWoo
+ */
+
 object SampleKommand {
     fun register(builder: KommandBuilder) {
         builder.apply {
