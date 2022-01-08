@@ -1,0 +1,44 @@
+/*
+ * Copyright (c) 2021 BaeHyeonWoo
+ *
+ *  Licensed under the General Public License, Version 3.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * https://opensource.org/licenses/gpl-3.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.baehyeonwoo.sample.plugin.tasks
+
+import com.baehyeonwoo.sample.plugin.objects.SampleObject.getInstance
+import java.io.File
+
+/***
+ * @author BaeHyeonWoo
+ */
+
+class SampleConfigReloadTask: Runnable {
+    private val configFile = File(getInstance().dataFolder, "config.yml")
+
+    private var configFileLastModified = configFile.lastModified()
+
+    override fun run() {
+        // Live Config Reloading. If you need this task, register it anywehre you want.
+        // But you should know in advance that this method uses "java.io.File" so it will read your local config file. This means that if you set this task delay for 0, it will read file 20 times per second.
+        // Use with caution, especially for hard drive users.
+
+        if (configFileLastModified != configFile.lastModified()) {
+            getInstance().logger.info("Config Reloaded.")
+            getInstance().reloadConfig()
+            getInstance().saveConfig()
+
+            configFileLastModified = configFile.lastModified()
+        }
+    }
+}
