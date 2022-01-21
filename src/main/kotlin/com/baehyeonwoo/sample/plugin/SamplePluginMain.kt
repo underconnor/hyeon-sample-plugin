@@ -1,17 +1,7 @@
 /*
- * Copyright (c) 2021 BaeHyeonWoo
+ * Copyright (c) 2022 BaeHyeonWoo
  *
- *  Licensed under the General Public License, Version 3.0 (the "License");
- *  you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * https://opensource.org/licenses/gpl-3.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ *  Licensed under the General Public License, Version 3.0. (https://opensource.org/licenses/gpl-3.0/)
  */
 
 package com.baehyeonwoo.sample.plugin
@@ -19,12 +9,15 @@ package com.baehyeonwoo.sample.plugin
 import com.baehyeonwoo.sample.plugin.commands.SampleKommand
 import com.baehyeonwoo.sample.plugin.config.SampleConfig
 import com.baehyeonwoo.sample.plugin.events.SampleEvent
-import com.baehyeonwoo.sample.plugin.tasks.SampleScheduler
+import com.baehyeonwoo.sample.plugin.tasks.SampleTask
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
 
 /***
  * @author BaeHyeonWoo
+ *
+ * "Until my feet are crushed,"
+ * "Until I can get ahead of myself."
  */
 
 class SamplePluginMain : JavaPlugin() {
@@ -41,8 +34,8 @@ class SamplePluginMain : JavaPlugin() {
         SampleConfig.load(configFile)
         logger.info("Hello World!")
         server.pluginManager.registerEvents(SampleEvent(), this)
-        // server.scheduler.runTaskTimer(this, SampleConfigReloadTask(), 0L, 0L)
-        server.scheduler.runTaskTimer(this, SampleScheduler(), 0L, 0L)
+//        server.scheduler.runTaskTimer(this, SampleConfigReloadTask(), 0L, 20L)
+        server.scheduler.runTaskTimer(this, SampleTask(), 0L, 0L)
         SampleKommand.sampleKommand()
     }
 }
