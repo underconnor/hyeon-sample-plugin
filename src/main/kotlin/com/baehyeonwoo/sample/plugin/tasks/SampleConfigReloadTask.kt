@@ -22,7 +22,7 @@ class SampleConfigReloadTask: Runnable {
     private var configFileLastModified = configFile.lastModified()
 
     override fun run() {
-        // Live Config Reloading. If you need this task, register it anywehre you want.
+        // Live Config Reloading. If you need this task, register it anywhere you want.
         // But you should know in advance that this method uses "java.io.File" so it will read your local config file. This means that if you set this task delay for 0, it will read file 20 times per second.
         // Use with caution, especially for hard drive users.
 
