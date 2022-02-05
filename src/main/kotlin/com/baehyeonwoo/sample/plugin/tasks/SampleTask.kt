@@ -6,7 +6,7 @@
 
 package com.baehyeonwoo.sample.plugin.tasks
 
-import com.baehyeonwoo.sample.plugin.objects.SampleObject.getInstance
+import com.baehyeonwoo.sample.plugin.objects.SampleObject.plugin
 
 /***
  * @author BaeHyeonWoo
@@ -17,6 +17,6 @@ import com.baehyeonwoo.sample.plugin.objects.SampleObject.getInstance
 
 class SampleTask : Runnable {
     override fun run() {
-        getInstance().logger.info("Hello World!")
+        plugin.logger.info("Hello World!")
     }
 }

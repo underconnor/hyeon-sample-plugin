@@ -6,7 +6,8 @@
 
 package com.baehyeonwoo.sample.plugin.events
 
-import com.baehyeonwoo.sample.plugin.objects.SampleObject.getInstance
+import com.baehyeonwoo.sample.plugin.objects.SampleObject.plugin
+import com.baehyeonwoo.sample.plugin.objects.SampleObject.server
 import io.github.monun.tap.effect.playFirework
 import net.kyori.adventure.text.Component.text
 import org.bukkit.Color
@@ -28,11 +29,11 @@ class SampleEvent : Listener {
         val loc = e.player.location.add(0.0, 0.5, 0.0)
         val firework = FireworkEffect.builder().with(FireworkEffect.Type.STAR).withColor(Color.AQUA).build()
 
-        if (e.player.uniqueId.toString() in getInstance().config.getString("administrator").toString()) {
-            e.player.sendMessage(text("Tap Config Sample: Admin Join"))
+        if (plugin.config.getString("administrator").toString().contains(e.player.uniqueId.toString())) {
+            server.broadcast(text("Tap Config Sample: Admin Join"))
         }
 
-        getInstance().logger.info("Hello World!")
+        plugin.logger.info("Hello World!")
         e.player.sendMessage(text("Hello World!"))
         loc.world.playFirework(loc, firework)
     }

@@ -6,8 +6,7 @@
 
 package com.baehyeonwoo.sample.plugin.commands
 
-import com.baehyeonwoo.sample.plugin.objects.SampleObject.getInstance
-import io.github.monun.kommand.kommand
+import io.github.monun.kommand.node.LiteralNode
 import net.kyori.adventure.text.Component.text
 
 /***
@@ -18,13 +17,11 @@ import net.kyori.adventure.text.Component.text
  */
 
 object SampleKommand {
-    fun sampleKommand() {
-        getInstance().kommand {
-            register("sample") {
-                requires { playerOrNull != null && isOp }
-                executes {
-                    sender.sendMessage(text("Hello World!"))
-                }
+    fun register(builder: LiteralNode) {
+        builder.apply {
+            requires { playerOrNull != null && isOp }
+            executes {
+                sender.sendMessage(text("Hello World!"))
             }
         }
     }

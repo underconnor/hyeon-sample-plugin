@@ -17,7 +17,9 @@ import org.bukkit.plugin.Plugin
  */
 
 object SampleObject {
-    fun getInstance(): Plugin {
-        return SamplePluginMain.instance
-    }
+    val plugin = SamplePluginMain.instance
+
+    val server = plugin.server
+
+    const val message = "Hello World!"
 }

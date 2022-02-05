@@ -6,7 +6,7 @@
 
 package com.baehyeonwoo.sample.plugin.tasks
 
-import com.baehyeonwoo.sample.plugin.objects.SampleObject.getInstance
+import com.baehyeonwoo.sample.plugin.objects.SampleObject.plugin
 import java.io.File
 
 /***
@@ -17,7 +17,7 @@ import java.io.File
  */
 
 class SampleConfigReloadTask: Runnable {
-    private val configFile = File(getInstance().dataFolder, "config.yml")
+    private val configFile = File(plugin.dataFolder, "config.yml")
 
     private var configFileLastModified = configFile.lastModified()
 
@@ -27,9 +27,9 @@ class SampleConfigReloadTask: Runnable {
         // Use with caution, especially for hard drive users.
 
         if (configFileLastModified != configFile.lastModified()) {
-            getInstance().logger.info("Config Reloaded.")
-            getInstance().reloadConfig()
-            getInstance().saveConfig()
+            plugin.logger.info("Config Reloaded.")
+            plugin.reloadConfig()
+            plugin.saveConfig()
 
             configFileLastModified = configFile.lastModified()
         }

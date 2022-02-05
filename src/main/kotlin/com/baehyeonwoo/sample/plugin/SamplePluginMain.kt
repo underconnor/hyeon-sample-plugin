@@ -6,10 +6,12 @@
 
 package com.baehyeonwoo.sample.plugin
 
-import com.baehyeonwoo.sample.plugin.commands.SampleKommand
-import com.baehyeonwoo.sample.plugin.config.SampleConfig
+import com.baehyeonwoo.sample.plugin.commands.SampleKommand.register
+import com.baehyeonwoo.sample.plugin.config.SampleConfig.load
 import com.baehyeonwoo.sample.plugin.events.SampleEvent
+import com.baehyeonwoo.sample.plugin.objects.SampleObject.message
 import com.baehyeonwoo.sample.plugin.tasks.SampleTask
+import io.github.monun.kommand.kommand
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
 
@@ -31,11 +33,16 @@ class SamplePluginMain : JavaPlugin() {
 
     override fun onEnable() {
         instance = this
-        SampleConfig.load(configFile)
-        logger.info("Hello World!")
+        load(configFile)
+        logger.info(message)
         server.pluginManager.registerEvents(SampleEvent(), this)
 //        server.scheduler.runTaskTimer(this, SampleConfigReloadTask(), 0L, 20L)
         server.scheduler.runTaskTimer(this, SampleTask(), 0L, 0L)
-        SampleKommand.sampleKommand()
+
+        kommand {
+            register("sample") {
+                register(this)
+            }
+        }
     }
 }
