@@ -2,7 +2,7 @@
 
 ## Environment
 
-- [Paper 1.18.1](https://papermc.io/downloads) dependencies
+- [Paper 1.18.2](https://papermc.io/downloads) dependencies
 - [Tap](https://github.com/monun/tap) dependencies
 - [Kommand](https://github.com/monun/kommand/) dependencies
 - [Server Script](https://github.com/monun/server-script) / Using [aroxu's GoLang version](https://github.com/aroxu/server-script/)
